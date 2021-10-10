@@ -1,0 +1,66 @@
+Inheritance allows you to reuse data and behavior from the parent class.
+It is useful for generalization in which case you may notice that several classes share the same data and/or behavior and you pull that out into a parent class.
+
+class Employee{  
+ float salary=40000;  
+}  
+class Programmer extends Employee{  
+ int bonus=10000;  
+ public static void main(String args[]){  
+   Programmer p=new Programmer();  
+   System.out.println("Programmer salary is:"+p.salary);  
+   System.out.println("Bonus of Programmer is:"+p.bonus);  
+}  
+}  
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+Polymorphism in Java is a concept by which we can perform a single action in different ways. Polymorphism is derived from 2 Greek words: poly and morphs.
+The word "poly" means many and "morphs" means forms. So polymorphism means many forms.
+There are two types of polymorphism in Java: compile-time polymorphism and runtime polymorphism.
+We can perform polymorphism in java by method overloading and method overriding.
+
+class Shape{  
+void draw(){System.out.println("drawing...");}  
+}  
+class Rectangle extends Shape{  
+void draw(){System.out.println("drawing rectangle...");}  
+}  
+class Circle extends Shape{  
+void draw(){System.out.println("drawing circle...");}  
+}  
+class Triangle extends Shape{  
+void draw(){System.out.println("drawing triangle...");}  
+}  
+class TestPolymorphism2{  
+public static void main(String args[]){  
+Shape s;  
+s=new Rectangle();  
+s.draw();  
+s=new Circle();  
+s.draw();  
+s=new Triangle();  
+s.draw();  
+}  
+}  
+----------------------------------------------------------------------------------------------------------------------------------------
+Interface:
+An interface in Java is a blueprint of a class. It has static constants and abstract methods.
+The interface in Java is a mechanism to achieve abstraction.
+There can be only abstract methods in the Java interface, not method body. It is used to achieve abstraction and multiple inheritance in Java.
+
+
+interface Bank{  
+float rateOfInterest();  
+}  
+class SBI implements Bank{  
+public float rateOfInterest(){return 9.15f;}  
+}  
+class PNB implements Bank{  
+public float rateOfInterest(){return 9.7f;}  
+}  
+class TestInterface2{  
+public static void main(String[] args){  
+Bank b=new SBI();  
+System.out.println("ROI: "+b.rateOfInterest());  
+}}  
